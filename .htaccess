@@ -1,0 +1,562 @@
+ <ifmodule mod_rewrite.c>
+    RewriteEngine On
+    
+    RewriteRule ^login$ /jssipo/login.php [L]
+    RewriteRule ^logout$ /jssipo/logout.php [L]
+    RewriteRule ^task$ /jssipo/index.php?type=task&content=index [L]
+	RewriteRule ^index$ /jssipo/index.php?type=task&content=index [L]
+    RewriteRule ^task_examer_app$ /jssipo/index.php?type=task&content=taskExamerApp [L]
+    RewriteRule ^task_examer_inquire$ /jssipo/index.php?type=task&content=taskExamerInquire [L]
+    RewriteRule ^task_examer_inquire_PCT$ /jssipo/index.php?type=task&content=taskExamerInquirePCT [L]
+    RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_examer_inquire_yt$ /jssipo/index.php?type=task&content=finishListExamerYt&month=%1 [L]
+    RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_examer_inquire_ja$ /jssipo/index.php?type=task&content=finishListExamerJa&month=%1 [L]
+
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^task_examer_inquire_error$ /jssipo/index.php?type=task&content=errorAdd&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^task_examer_inquire_error_list$ /jssipo/index.php?type=task&content=errorReplyList&page=%1 [L]
+    RewriteCond %{QUERY_STRING} ^url=(.*)
+    RewriteRule ^task_examer_inquire_error_delConfirm$ /jssipo/index.php?type=task&content=errorDelConfirm&url=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^task_examer_inquire_error_delete$ /jssipo/index.php?type=task&content=errorDelete&id=%1 [L]  
+ 
+    RewriteCond %{QUERY_STRING} ^year=(.*)
+    RewriteRule ^task_chushi_app$ /jssipo/index.php?type=task&content=taskChushiApp&year=%1 [L]
+    RewriteRule ^task_chushi_inquire$ /jssipo/index.php?type=task&content=taskChushiInquire [L]
+	RewriteRule ^task_chushi_2_inquire$ /jssipo/index.php?type=task&content=taskChushi2Inquire [L]
+    RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_chushi_inquire_detail$ /jssipo/index.php?type=task&content=finishChushiDetail&month=%1 [L]
+    RewriteRule ^task_chushi_inquire_detail_all$ /jssipo/index.php?type=task&content=finishChushiDetailAll [L]
+	RewriteCond %{QUERY_STRING} ^month=(.*)  
+	RewriteRule ^task_chushi_2_inquire_detail$ /jssipo/index.php?type=task&content=finish2ChushiDetail&month=%1 [L]
+    RewriteRule ^task_chushi_2_inquire_detail_all$ /jssipo/index.php?type=task&content=finish2ChushiDetailAll [L]
+    RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_chushi_inquire_detail_yt$ /jssipo/index.php?type=task&content=finishChushiDetailYtList&month=%1 [L]
+    RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_chushi_inquire_detail_ja$ /jssipo/index.php?type=task&content=finishChushiDetailJaList&month=%1 [L]
+	RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_chushi_2_inquire_detail_yt$ /jssipo/index.php?type=task&content=finish2ChushiDetailYtList&month=%1 [L]
+    RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_chushi_2_inquire_detail_ja$ /jssipo/index.php?type=task&content=finish2ChushiDetailJaList&month=%1 [L]
+    RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_chushi_inquire_yt$ /jssipo/index.php?type=task&content=finishListChushiYt&month=%1 [L]
+    RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_chushi_inquire_ja$ /jssipo/index.php?type=task&content=finishListChushiJa&month=%1 [L]
+	RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_chushi_2_inquire_yt$ /jssipo/index.php?type=task&content=finishList2ChushiYt&month=%1 [L]
+    RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_chushi_2_inquire_ja$ /jssipo/index.php?type=task&content=finishList2ChushiJa&month=%1 [L]
+
+    RewriteCond %{QUERY_STRING} ^year=(.*)
+    RewriteRule ^task_bumen_app$ /jssipo/index.php?type=task&content=taskBumenApp&year=%1 [L]
+    RewriteRule ^task_bumen_yuliu_detail$ /jssipo/index.php?type=task&content=yuliuBumenDetail [L]
+    RewriteCond %{QUERY_STRING} ^orgid=(.*)   
+    RewriteRule ^task_bumen_app_chushi$ /jssipo/index.php?type=task&content=taskBumenAppChushi&orgid=%1  [L]
+    RewriteRule ^task_bumen_inquire$ /jssipo/index.php?type=task&content=taskBumenInquire [L]
+	RewriteRule ^task_bumen_2_inquire$ /jssipo/index.php?type=task&content=taskBumen2Inquire [L]
+    RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_bumen_inquire_detail$ /jssipo/index.php?type=task&content=finishBumenDetail&month=%1 [L]
+    RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_bumen_2_inquire_detail$ /jssipo/index.php?type=task&content=finish2BumenDetail&month=%1 [L]
+    RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_bumen_inquire_detail_single$ /jssipo/index.php?type=task&content=finishBumenDetailSingle&month=%1 [L]
+    RewriteRule ^task_bumen_inquire_detail_all$ /jssipo/index.php?type=task&content=finishBumenDetailAll [L]
+	RewriteRule ^task_bumen_2_inquire_detail_all$ /jssipo/index.php?type=task&content=finish2BumenDetailAll [L]
+    RewriteRule ^task_bumen_inquire_detail_all_single$ /jssipo/index.php?type=task&content=finishBumenDetailAllSingle [L]
+	RewriteRule ^task_bumen_2_inquire_detail_all_single$ /jssipo/index.php?type=task&content=finish2BumenDetailAllSingle [L]
+    RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_bumen_inquire_detail_chushi$ /jssipo/index.php?type=task&content=finishBumenDetailChushi&month=%1 [L]
+    RewriteCond %{QUERY_STRING} ^orgid=(.*)    
+    RewriteRule ^task_bumen_inquire_detail_chushi_all$ /jssipo/index.php?type=task&content=finishBumenDetailChushiAll&orgid=%1 [L]
+	RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_bumen_2_inquire_detail_chushi$ /jssipo/index.php?type=task&content=finish2BumenDetailChushi&month=%1 [L]
+    RewriteCond %{QUERY_STRING} ^orgid=(.*)    
+    RewriteRule ^task_bumen_2_inquire_detail_chushi_all$ /jssipo/index.php?type=task&content=finish2BumenDetailChushiAll&orgid=%1 [L]
+    RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_bumen_inquire_yt$ /jssipo/index.php?type=task&content=finishListBumenYt&month=%1 [L]
+	RewriteCond %{QUERY_STRING} ^month=(.*) 
+	RewriteRule ^task_bumen_2_inquire_yt$ /jssipo/index.php?type=task&content=finishList2BumenYt&month=%1 [L]
+	RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_bumen_inquire_yt2016$ /jssipo/index.php?type=task&content=finishListBumenYt2016&month=%1 [L]
+    RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_bumen_inquire_ja$ /jssipo/index.php?type=task&content=finishListBumenJa&month=%1 [L]
+    RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_bumen_2_inquire_ja$ /jssipo/index.php?type=task&content=finishList2BumenJa&month=%1 [L]
+
+    RewriteRule ^task_zhongxin_app$ /jssipo/index.php?type=task&content=taskZhongxinApp [L]
+    RewriteRule ^task_zhongxin_inquire$ /jssipo/index.php?type=task&content=taskZhongxinInquire [L]
+	RewriteRule ^task_zhongxin_2_inquire$ /jssipo/index.php?type=task&content=taskZhongxin2Inquire [L]
+	RewriteRule ^task_zhongxin_inquire_2016$ /jssipo/index.php?type=task&content=taskZhongxinInquire2016 [L]
+    RewriteRule ^task_zhongxin_yuliu_detail$ /jssipo/index.php?type=task&content=yuliuZhongxinDetail [L]
+    RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_zhongxin_inquire_detail$ /jssipo/index.php?type=task&content=finishZhongxinDetail&month=%1 [L]
+    RewriteRule ^task_zhongxin_inquire_detail_all$ /jssipo/index.php?type=task&content=finishZhongxinDetailAll [L]
+	RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_zhongxin_2_inquire_detail$ /jssipo/index.php?type=task&content=finishZhongxin2Detail&month=%1 [L]
+    RewriteRule ^task_zhongxin_2_inquire_detail_all$ /jssipo/index.php?type=task&content=finishZhongxin2DetailAll [L]
+    RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_zhongxin_inquire_detail2016$ /jssipo/index.php?type=task&content=finish2016ZhongxinDetail&month=%1 [L]
+    RewriteRule ^task_zhongxin_inquire_detail_all2016$ /jssipo/index.php?type=task&content=finish2016ZhongxinDetailAll [L]
+    RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_zhongxin_inquire_detail_single$ /jssipo/index.php?type=task&content=finishZhongxinDetailSingle&month=%1 [L]
+    RewriteRule ^task_zhongxin_inquire_detail_all_single$ /jssipo/index.php?type=task&content=finishZhongxinDetailAllSingle [L]
+	RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_zhongxin_inquire_detail_single2016$ /jssipo/index.php?type=task&content=finishZhongxinDetailSingle2016&month=%1 [L]
+    RewriteRule ^task_zhongxin_inquire_detail_all_single2016$ /jssipo/index.php?type=task&content=finishZhongxinDetailAllSingle2016 [L]
+    RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_zhongxin_inquire_detail_bumen$ /jssipo/index.php?type=task&content=finishZhongxinDetailBumen&month=%1 [L]
+    RewriteCond %{QUERY_STRING} ^orgid=(.*)    
+    RewriteRule ^task_zhongxin_inquire_detail_bumen_all$ /jssipo/index.php?type=task&content=finishZhongxinDetailBumenAll&orgid=%1 [L]
+	RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_zhongxin_2_inquire_detail_bumen$ /jssipo/index.php?type=task&content=finishZhongxin2DetailBumen&month=%1 [L]
+    RewriteCond %{QUERY_STRING} ^orgid=(.*)    
+    RewriteRule ^task_zhongxin_2_inquire_detail_bumen_all$ /jssipo/index.php?type=task&content=finishZhongxin2DetailBumenAll&orgid=%1 [L]
+    RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_zhongxin_inquire_detail_bumen_single$ /jssipo/index.php?type=task&content=finishZhongxinDetailBumenSingle&month=%1 [L]
+    RewriteCond %{QUERY_STRING} ^orgid=(.*)    
+    RewriteRule ^task_zhongxin_inquire_detail_bumen_all_single$ /jssipo/index.php?type=task&content=finishZhongxinDetailBumenAllSingle&orgid=%1 [L]
+    RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_zhongxin_inquire_yt$ /jssipo/index.php?type=task&content=finishListZhongxinYt&month=%1 [L]
+	RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_zhongxin_inquire_yt2016$ /jssipo/index.php?type=task&content=finish2016ListZhongxinYt&month=%1 [L]
+    RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_zhongxin_inquire_ja$ /jssipo/index.php?type=task&content=finishListZhongxinJa&month=%1 [L]
+	RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_zhongxin_2_inquire_ja$ /jssipo/index.php?type=task&content=finishList2ZhongxinJa&month=%1 [L]
+    RewriteCond %{QUERY_STRING} ^month=(.*)    
+    RewriteRule ^task_zhongxin_inquire_ja2016$ /jssipo/index.php?type=task&content=finish2016ListZhongxinJa&month=%1 [L]
+	RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^task_zhongxin_tonghou$ /jssipo/index.php?type=task&content=taskZhongxinTonghou&page=%1 [L]
+    RewriteCond %{QUERY_STRING} ^org=(.*)
+    RewriteRule ^task_org$ /jssipo/index.php?type=task&content=taskOrg&org=%1 [L]
+    
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^task_admin_control$ /jssipo/index.php?type=task&content=appControl&page=%1 [L]
+    RewriteCond %{QUERY_STRING} ^url=(.*)
+    RewriteRule ^task_admin_control_delConfirm$ /jssipo/index.php?type=task&content=appControlDelConfirm&url=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^task_admin_control_delete$ /jssipo/index.php?type=task&content=appControlDelete&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^task_admin_control_update$ /jssipo/index.php?type=task&content=appControlUpdate&id=%1 [L]
+
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^task_admin_control_type$ /jssipo/index.php?type=task&content=taskTypeControl&page=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^task_admin_control_type_update$ /jssipo/index.php?type=task&content=taskTypeControlUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^task_admin_control_type_delete$ /jssipo/index.php?type=task&content=taskTypeControlDelete&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^url=(.*)
+    RewriteRule ^task_admin_control_type_delConfirm$ /jssipo/index.php?type=task&content=taskTypeControlDelConfirm&url=%1 [L]
+
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^task_admin_control_fenjie$ /jssipo/index.php?type=task&content=taskFenjieControl&page=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^task_admin_control_fenjie_update$ /jssipo/index.php?type=task&content=taskFenjieControlUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^task_admin_control_fenjie_delete$ /jssipo/index.php?type=task&content=taskFenjieControlDelete&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^url=(.*)
+    RewriteRule ^task_admin_control_fenjie_delConfirm$ /jssipo/index.php?type=task&content=taskFenjieControlDelConfirm&url=%1 [L]
+    
+    RewriteCond %{QUERY_STRING} ^orgid=(.*)
+    RewriteRule ^task_admin_control_confirm$ /jssipo/index.php?type=task&content=taskConfirmControl&orgid=%1 [L]
+
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^task_admin_error_list$ /jssipo/index.php?type=task&content=errorAdminList&page=%1 [L]
+    RewriteCond %{QUERY_STRING} ^url=(.*)
+    RewriteRule ^task_admin_inquire_error_delConfirm$ /jssipo/index.php?type=task&content=errorAdminDelConfirm&url=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^task_admin_inquire_error_delete$ /jssipo/index.php?type=task&content=errorAdminDelete&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^task_admin_inquire_error_fastdeal$ /jssipo/index.php?type=task&content=errorAdminFastDeal&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^task_admin_inquire_error_deal$ /jssipo/index.php?type=task&content=errorAdminDeal&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^url=(.*)
+    RewriteRule ^task_admin_inquire_error_deal_delConfirm$ /jssipo/index.php?type=task&content=errorAdminDealDelConfirm&url=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^task_admin_inquire_error_deal_delete$ /jssipo/index.php?type=task&content=errorAdminDealDelete&id=%1 [L]
+
+    RewriteRule ^chuan_admin_control_type$ /jssipo/index.php?type=task&content=chuanTypeControl [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^chuan_admin_control_type_update$ /jssipo/index.php?type=task&content=chuanTypeControlUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^chuan_admin_control_type_delete$ /jssipo/index.php?type=task&content=chuanTypeControlDelete&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^url=(.*)
+    RewriteRule ^chuan_admin_control_type_delConfirm$ /jssipo/index.php?type=task&content=chuanTypeControlDelConfirm&url=%1 [L]
+
+    RewriteRule ^orgStaff$ /jssipo/index.php?type=orgStaff&content=index [L]
+    RewriteCond %{QUERY_STRING} ^do=(.*)
+    RewriteRule ^org_admin_control$ /jssipo/index.php?type=orgStaff&content=orgControl&do=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^org_admin_control_update$ /jssipo/index.php?type=orgStaff&content=orgControlUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^org_admin_control_delete$ /jssipo/index.php?type=orgStaff&content=orgControlDelete&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^url=(.*)
+    RewriteRule ^org_admin_control_delConfirm$ /jssipo/index.php?type=orgStaff&content=orgControlDelConfirm&url=%1 [L]
+
+    RewriteRule ^staff_admin_control$ /jssipo/index.php?type=orgStaff&content=staffControl [L]
+    RewriteCond %{QUERY_STRING} ^org=(.*)
+    RewriteRule ^staff_admin_control_Bumen$ /jssipo/index.php?type=orgStaff&content=staffControlBumen&org=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^staff_admin_control_update$ /jssipo/index.php?type=orgStaff&content=staffControlUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^staff_admin_control_delete$ /jssipo/index.php?type=orgStaff&content=staffControlDelete&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^url=(.*)
+    RewriteRule ^staff_admin_control_delConfirm$ /jssipo/index.php?type=orgStaff&content=staffControlDelConfirm&url=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^staff_admin_control_reset$ /jssipo/index.php?type=orgStaff&content=staffControlReset&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^url=(.*)
+    RewriteRule ^staff_admin_control_resetConfirm$ /jssipo/index.php?type=orgStaff&content=staffControlResetConfirm&url=%1 [L]
+	RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^staff_admin_control_zhuxiao$ /jssipo/index.php?type=orgStaff&content=staffControlZhuxiao&id=%1 [L]
+	RewriteCond %{QUERY_STRING} ^url=(.*)
+    RewriteRule ^staff_admin_control_zhuxiaoConfirm$ /jssipo/index.php?type=orgStaff&content=staffControlZhuxiaoConfirm&url=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^staff_admin_extr$ /jssipo/index.php?type=orgStaff&content=staffAdminExtr&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^staff_admin_extr_update$ /jssipo/index.php?type=orgStaff&content=staffAdminExtrUpdate&id=%1 [L]
+
+    RewriteRule ^staff$ /jssipo/index.php?type=staff&content=index [L]
+    RewriteRule ^info_staff$ /jssipo/index.php?type=staff&content=staffInfo [L]
+    RewriteRule ^pwd_staff_update$ /jssipo/index.php?type=staff&content=staffPWDUpdate [L]
+    RewriteCond %{QUERY_STRING} ^do=(.*)
+    RewriteRule ^org_staff_info$ /jssipo/index.php?type=staff&content=orgStaffInfo&do=%1 [L]
+    RewriteCond %{QUERY_STRING} ^do=(.*)
+    RewriteRule ^org_staff_assessment$ /jssipo/index.php?type=staff&content=orgStaffAssessment&do=%1 [L]
+    RewriteCond %{QUERY_STRING} ^do=(.*)
+    RewriteRule ^org_assessment$ /jssipo/index.php?type=staff&content=orgAssessment&do=%1 [L]
+    RewriteCond %{QUERY_STRING} ^staffId=(.*)
+    RewriteRule ^staff_abroad_info$ /jssipo/index.php?type=staff&content=staffAbroadInfo&staffId=%1 [L]
+    RewriteCond %{QUERY_STRING} ^do=(.*)
+    RewriteRule ^staff_abroad_info$ /jssipo/index.php?type=staff&content=staffAbroadInfo&do=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^org_staff_info_update$ /jssipo/index.php?type=staff&content=orgStaffInfoUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^org_staff_assessment_update$ /jssipo/index.php?type=staff&content=orgStaffAssessmentUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^org_assessment_update$ /jssipo/index.php?type=staff&content=orgAssessmentUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^staff_abroad_info_update$ /jssipo/index.php?type=staff&content=staffAbroadInfoUpdate&id=%1 [L]
+
+
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^task_admin_PCT$ /jssipo/index.php?type=task&content=PCT&page=%1 [L]
+    RewriteCond %{QUERY_STRING} ^url=(.*)
+    RewriteRule ^task_admin_PCT_delConfirm$ /jssipo/index.php?type=task&content=PCTDelConfirm&url=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^task_admin_PCT_delete$ /jssipo/index.php?type=task&content=PCTDelete&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^task_admin_PCT_update$ /jssipo/index.php?type=task&content=PCTUpdate&id=%1 [L]
+
+    RewriteRule ^links$ /jssipo/index.php?type=links&content=index&id=0&linkType=0 [L]
+    RewriteRule ^links_index$ /jssipo/index.php?type=links&content=linksIndex [L]
+    RewriteCond %{QUERY_STRING} ^do=(.*)
+    RewriteRule ^links_type_control$ /jssipo/index.php?type=links&content=linksType&do=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^links_type_control_update$ /jssipo/index.php?type=links&content=linksTypeUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^links_type_control_delete$ /jssipo/index.php?type=links&content=linksTypeDelete&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^url=(.*)
+    RewriteRule ^links_type_control_delConfirm$ /jssipo/index.php?type=links&content=linksTypeDelConfirm&url=%1 [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^links_title_control$ /jssipo/index.php?type=links&content=linksTitle&page=%1 [L]
+    RewriteCond %{QUERY_STRING} ^do=(.*)
+    RewriteRule ^links_title_control$ /jssipo/index.php?type=links&content=linksTitle&do=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^links_title_control_update$ /jssipo/index.php?type=links&content=linksTitleUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^links_title_control_delete$ /jssipo/index.php?type=links&content=linksTitleDelete&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^url=(.*)
+    RewriteRule ^links_title_control_delConfirm$ /jssipo/index.php?type=links&content=linksTitleDelConfirm&url=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^links_list$ /jssipo/index.php?type=links&content=linksList&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^links_content$ /jssipo/index.php?type=links&content=linksListContent&id=%1 [L]
+
+    RewriteRule ^vote$ /jssipo/index.php?type=vote&content=index [L] 
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^vote_todo$ /jssipo/index.php?type=vote&content=voteTodo&page=%1 [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^vote_list$ /jssipo/index.php?type=vote&content=voteList&page=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^vote_content$ /jssipo/index.php?type=vote&content=voteContent&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^vote_text$ /jssipo/index.php?type=vote&content=voteText&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^vote_title_control$ /jssipo/index.php?type=vote&content=voteTitle&page=%1 [L] 
+    RewriteCond %{QUERY_STRING} ^do=(.*)
+    RewriteRule ^vote_title_control$ /jssipo/index.php?type=vote&content=voteTitle&do=%1 [L] 
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^vote_title_control_update$ /jssipo/index.php?type=vote&content=voteTitleUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^vote_ques_control$ /jssipo/index.php?type=vote&content=voteQues&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^vote_result_control$ /jssipo/index.php?type=vote&content=voteResult&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^vote_user_org$ /jssipo/index.php?type=vote&content=voteUserOrg&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^vote_user_term$ /jssipo/index.php?type=vote&content=voteUserTerm&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^vote_user_selected$ /jssipo/index.php?type=vote&content=voteUserSelected&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^vote_copy_control$ /jssipo/index.php?type=vote&content=voteCopy&id=%1 [L]
+
+
+    RewriteRule ^class$ /jssipo/index.php?type=class&content=index [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^class_title_control$ /jssipo/index.php?type=class&content=classTitle&page=%1 [L] 
+    RewriteCond %{QUERY_STRING} ^org=(.*)
+    RewriteRule ^class_title_control$ /jssipo/index.php?type=class&content=classTitle&org=%1 [L] 
+    RewriteCond %{QUERY_STRING} ^do=(.*)
+    RewriteRule ^class_title_control$ /jssipo/index.php?type=class&content=classTitle&do=%1 [L] 
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^class_title_control_update$ /jssipo/index.php?type=class&content=classTitleUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^typeId=(.*)
+    RewriteRule ^class_list$ /jssipo/index.php?type=class&content=classList&typeId=%1 [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^class_list_new$ /jssipo/index.php?type=class&content=classListNew&page=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^class_student_org$ /jssipo/index.php?type=class&content=classStudentOrg&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^class_student_term$ /jssipo/index.php?type=class&content=classStudentTerm&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^class_student_selected$ /jssipo/index.php?type=class&content=classStudentSelected&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^class_count_report$ /jssipo/index.php?type=class&content=classCountReport&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^class_count_confirm$ /jssipo/index.php?type=class&content=classCountConfirm&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^class_app$ /jssipo/index.php?type=class&content=classApp&id=%1  [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^class_app_term$ /jssipo/index.php?type=class&content=classAppTerm&id=%1  [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^class_app_selected$ /jssipo/index.php?type=class&content=classAppSelected&id=%1  [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^class_content$ /jssipo/index.php?type=class&content=classContent&id=%1  [L]
+    RewriteRule ^class_inquire$ /jssipo/index.php?type=class&content=classInquire [L]
+    RewriteRule ^class_inquire_examer$ /jssipo/index.php?type=class&content=classInquireExamer [L]
+    RewriteCond %{QUERY_STRING} ^staffId=(.*)
+    RewriteRule ^class_count_list$ /jssipo/index.php?type=class&content=classCountList&staffId=%1  [L]
+
+    RewriteRule ^task_zhongxin_inquire_detailYc$ /jssipo/index.php?type=task&content=finishZhongxinDetailYc [L]
+	RewriteRule ^task_zhongxin_2_inquire_detailYc$ /jssipo/index.php?type=task&content=finishZhongxin2DetailYc [L]
+    RewriteCond %{QUERY_STRING} ^orgid=(.*)    
+    RewriteRule ^task_zhongxin_inquire_detail_bumenYc$ /jssipo/index.php?type=task&content=finishZhongxinDetailBumenYc&orgid=%1 [L]
+    RewriteCond %{QUERY_STRING} ^orgid=(.*)    
+    RewriteRule ^task_bumen_inquire_detail_chushiYc$ /jssipo/index.php?type=task&content=finishBumenDetailChushiYc&orgid=%1 [L] 
+    RewriteCond %{QUERY_STRING} ^orgid=(.*)    
+    RewriteRule ^task_bumen_2_inquire_detail_chushiYc$ /jssipo/index.php?type=task&content=finish2BumenDetailChushiYc&orgid=%1 [L] 	
+    RewriteRule ^task_zhongxin_inquire_detail_singleYc$ /jssipo/index.php?type=task&content=finishZhongxinDetailSingleYc [L] 
+    RewriteCond %{QUERY_STRING} ^orgid=(.*)  
+    RewriteRule ^task_zhongxin_inquire_detail_bumen_singleYc$ /jssipo/index.php?type=task&content=finishZhongxinDetailBumenSingleYc&orgid=%1 [L] 
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^task_zhongxin_inquire_ytYc$ /jssipo/index.php?type=task&content=finishListZhongxinYtYc&page=%1 [L] 
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^task_zhongxin_inquire_jaYc$ /jssipo/index.php?type=task&content=finishListZhongxinJaYc&page=%1 [L]
+    RewriteCond %{QUERY_STRING} ^staff=(.*)   
+    RewriteRule ^task_chushi_inquire_detail_ytYc$ /jssipo/index.php?type=task&content=finishChushiDetailYtListYc&staff=%1 [L]
+    RewriteCond %{QUERY_STRING} ^staff=(.*) 
+    RewriteRule ^task_chushi_2_inquire_detail_jaYc$ /jssipo/index.php?type=task&content=finish2ChushiDetailJaListYc&staff=%1 [L]
+    RewriteCond %{QUERY_STRING} ^staff=(.*)   
+    RewriteRule ^task_chushi_2_inquire_detail_ytYc$ /jssipo/index.php?type=task&content=finish2ChushiDetailYtListYc&staff=%1 [L]
+    RewriteCond %{QUERY_STRING} ^staff=(.*) 
+    RewriteRule ^task_chushi_inquire_detail_jaYc$ /jssipo/index.php?type=task&content=finishChushiDetailJaListYc&staff=%1 [L]
+    RewriteRule ^task_examer_inquire_ytYc$ /jssipo/index.php?type=task&content=finishListExamerYtYc [L]
+    RewriteRule ^task_examer_inquire_jaYc$ /jssipo/index.php?type=task&content=finishListExamerJaYc [L]   
+    RewriteRule ^task_bumen_inquire_detailYc$ /jssipo/index.php?type=task&content=finishBumenDetailYc [L]
+	RewriteRule ^task_bumen_2_inquire_detailYc$ /jssipo/index.php?type=task&content=finish2BumenDetailYc [L]
+    RewriteRule ^task_bumen_inquire_detail_singleYc$ /jssipo/index.php?type=task&content=finishBumenDetailSingleYc [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^task_bumen_inquire_ytYc$ /jssipo/index.php?type=task&content=finishListBumenYtYc&page=%1 [L] 
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^task_bumen_inquire_jaYc$ /jssipo/index.php?type=task&content=finishListBumenJaYc&page=%1 [L]
+    RewriteRule ^task_chushi_inquire_detailYc$ /jssipo/index.php?type=task&content=finishChushiDetailYc [L]
+	RewriteRule ^task_chushi_2_inquire_detailYc$ /jssipo/index.php?type=task&content=finish2ChushiDetailYc [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^task_chushi_inquire_ytYc$ /jssipo/index.php?type=task&content=finishListChushiYtYc&page=%1 [L]
+	RewriteRule ^task_chushi_2_inquire_ytYc$ /jssipo/index.php?type=task&content=finishList2ChushiYtYc&page=%1 [L]  	
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^task_chushi_inquire_jaYc$ /jssipo/index.php?type=task&content=finishListChushiJaYc&page=%1 [L]
+	RewriteRule ^task_chushi_2_inquire_jaYc$ /jssipo/index.php?type=task&content=finishList2ChushiJaYc&page=%1 [L]
+    RewriteRule ^task_chuanTime_control$ /jssipo/index.php?type=task&content=taskChuanTimeControl [L]
+
+    RewriteRule ^shenxian$ /jssipo/index.php?type=shenxian&content=shenxianIndex [L]
+    RewriteRule ^shenxian_index$ /jssipo/index.php?type=shenxian&content=shenxianIndexOrg [L]
+    RewriteRule ^shenxian_control$ /jssipo/index.php?type=shenxian&content=shenxianControl [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^shenxian_type$ /jssipo/index.php?type=shenxian&content=shenxianType&id=%1 [L]
+	RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^shenxian_type_xinan_insert$ /jssipo/index.php?type=shenxian&content=shenxianTypeXinanInsert&id=%1 [L]
+	RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^shenxian_type_huian_insert$ /jssipo/index.php?type=shenxian&content=shenxianTypeHuianInsert&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^shenxian_type_xinan_update$ /jssipo/index.php?type=shenxian&content=shenxianTypeXinanUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^shenxian_type_org$ /jssipo/index.php?type=shenxian&content=shenxianTypeOrg&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^org=(.*)
+    RewriteRule ^shenxian_org$ /jssipo/index.php?type=shenxian&content=shenxianOrg&org=%1 [L]
+    RewriteCond %{QUERY_STRING} ^org=(.*)
+    RewriteRule ^shenxian_staff$ /jssipo/index.php?type=shenxian&content=shenxianStaff&org=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^shenxian_count_update$ /jssipo/index.php?type=shenxian&content=shenxianCountUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^shenxian_chaoqi_list$ /jssipo/index.php?type=shenxian&content=shenxianChaoqiList&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^shenxian_chaoqi_update$ /jssipo/index.php?type=shenxian&content=shenxianChaoqiUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^shenxian_type_update$ /jssipo/index.php?type=shenxian&content=shenxianTypeUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^shenxian_type_reply$ /jssipo/index.php?type=shenxian&content=shenxianTypeReply&id=%1 [L]
+
+    RewriteRule ^biaoge$ /jssipo/index.php?type=biaoge&content=index [L]
+    RewriteRule ^biaoge_jiean_index$ /jssipo/index.php?type=biaoge&content=biaogeJieanIndex [L]
+    RewriteRule ^biaoge_jiean_index_org$ /jssipo/index.php?type=biaoge&content=biaogeJieanOrgIndex [L]
+    RewriteCond %{QUERY_STRING} ^startMonth=(.*)
+    RewriteRule ^biaoge_jiean_list$ /jssipo/index.php?type=biaoge&content=biaogeJieanList&startMonth=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^biaoge_jiean_insert$ /jssipo/index.php?type=biaoge&content=biaogeJieanInsert&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^biaoge_jiean_update$ /jssipo/index.php?type=biaoge&content=biaogeJieanUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^org=(.*)
+    RewriteRule ^biaoge_jiean_org$ /jssipo/index.php?type=biaoge&content=biaogeJieanOrg&org=%1 [L]
+    RewriteCond %{QUERY_STRING} ^org=(.*)
+    RewriteRule ^biaoge_jiean_org_qianzhi$ /jssipo/index.php?type=biaoge&content=biaogeJieanOrgQianzhi&org=%1 [L]
+    RewriteCond %{QUERY_STRING} ^org=(.*)
+    RewriteRule ^biaoge_jiean_list_org$ /jssipo/index.php?type=biaoge&content=biaogeJieanOrgList&org=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^biaoge_jiean_show$ /jssipo/index.php?type=biaoge&content=biaogeJieanOrgShow&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^org=(.*)
+    RewriteRule ^biaoge_jiean_staff$ /jssipo/index.php?type=biaoge&content=biaogeJieanOrgStaff&org=%1 [L]
+    RewriteCond %{QUERY_STRING} ^org=(.*)
+    RewriteRule ^biaoge_jiean_staff_qianzhi$ /jssipo/index.php?type=biaoge&content=biaogeJieanOrgStaffQianzhi&org=%1 [L]
+    RewriteCond %{QUERY_STRING} ^org=(.*)
+    RewriteRule ^biaoge_jiean_list_org_qianzhi$ /jssipo/index.php?type=biaoge&content=biaogeJieanOrgListQianzhi&org=%1 [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^biaoge_locked_list$ /jssipo/index.php?type=biaoge&content=biaogeLockedList&page=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^biaoge_locked_list_update$ /jssipo/index.php?type=biaoge&content=biaogeLockedListUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^biaoge_locked_list_org$ /jssipo/index.php?type=biaoge&content=biaogeLockedListOrg&page=%1 [L]
+	RewriteCond %{QUERY_STRING} ^org=(.*)
+    RewriteRule ^biaoge_locked_list_org$ /jssipo/index.php?type=biaoge&content=biaogeLockedListOrg&org=%1 [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^biaoge_correct_list$ /jssipo/index.php?type=biaoge&content=biaogeCorrectList&page=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^biaoge_correct_update$ /jssipo/index.php?type=biaoge&content=biaogeCorrectUpdate&id=%1 [L]
+    RewriteRule ^biaoge_correct_index$ /jssipo/index.php?type=biaoge&content=biaogeCorrectIndex [L]
+    RewriteCond %{QUERY_STRING} ^org=(.*)
+    RewriteRule ^biaoge_correct_list_org$ /jssipo/index.php?type=biaoge&content=biaogeCorrectOrgList&org=%1 [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^biaoge_locked_list_org$ /jssipo/index.php?type=biaoge&content=biaogeLockedListOrg&page=%1 [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^biaoge_feisanxing_list$ /jssipo/index.php?type=biaoge&content=biaogeFeisanxingList&page=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^biaoge_feisanxing_list_update$ /jssipo/index.php?type=biaoge&content=biaogeFeisanxingListUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^biaoge_feisanxing_list_org$ /jssipo/index.php?type=biaoge&content=biaogeFeisanxingListOrg&page=%1 [L]
+	RewriteCond %{QUERY_STRING} ^org=(.*)
+    RewriteRule ^biaoge_feisanxing_list_org$ /jssipo/index.php?type=biaoge&content=biaogeFeisanxingListOrg&org=%1 [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^biaoge_qianzhi_list$ /jssipo/index.php?type=biaoge&content=biaogeQianzhiList&page=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^biaoge_qianzhi_list_update$ /jssipo/index.php?type=biaoge&content=biaogeQianzhiListUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^biaoge_qianzhi_list_org$ /jssipo/index.php?type=biaoge&content=biaogeQianzhiListOrg&page=%1 [L]
+	RewriteCond %{QUERY_STRING} ^org=(.*)
+    RewriteRule ^biaoge_qianzhi_list_org$ /jssipo/index.php?type=biaoge&content=biaogeQianzhiListOrg&org=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^biaoge_qianzhi_chebo_fill$ /jssipo/index.php?type=biaoge&content=biaogeQianzhiCheboFill&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^biaoge_huishen_list$ /jssipo/index.php?type=biaoge&content=biaogeHuishenList&page=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^biaoge_huishen_list_update$ /jssipo/index.php?type=biaoge&content=biaogeHuishenListUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^biaoge_huishen_list_org$ /jssipo/index.php?type=biaoge&content=biaogeHuishenListOrg&page=%1 [L]
+	RewriteCond %{QUERY_STRING} ^org=(.*)
+    RewriteRule ^biaoge_huishen_list_org$ /jssipo/index.php?type=biaoge&content=biaogeHuishenListOrg&org=%1 [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^biaoge_liangyou_list$ /jssipo/index.php?type=biaoge&content=biaogeLiangyouList&page=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^biaoge_liangyou_list_update$ /jssipo/index.php?type=biaoge&content=biaogeLiangyouListUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^biaoge_liangyou_list_org$ /jssipo/index.php?type=biaoge&content=biaogeLiangyouListOrg&page=%1 [L]
+	RewriteCond %{QUERY_STRING} ^org=(.*)
+    RewriteRule ^biaoge_liangyou_list_org$ /jssipo/index.php?type=biaoge&content=biaogeLiangyouListOrg&org=%1 [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^biaoge_zhijian_list$ /jssipo/index.php?type=biaoge&content=biaogeZhijianList&page=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^biaoge_zhijian_list_org_update$ /jssipo/index.php?type=biaoge&content=biaogeZhijianListOrgUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^biaoge_zhijian_list_org$ /jssipo/index.php?type=biaoge&content=biaogeZhijianListOrg&page=%1 [L]
+	RewriteCond %{QUERY_STRING} ^org=(.*)
+    RewriteRule ^biaoge_zhijian_list_org$ /jssipo/index.php?type=biaoge&content=biaogeZhijianListOrg&org=%1 [L]
+	RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^beian_shencha_list$ /jssipo/index.php?type=beian&content=beianshenchaList&page=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^beian_shencha_list_update$ /jssipo/index.php?type=beian&content=beianshenchaListUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^beian_shencha_Org$ /jssipo/index.php?type=beian&content=beianshenchaOrg&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^beian_shencha_list_org$ /jssipo/index.php?type=beian&content=beianshenchaListOrg&page=%1 [L]
+	RewriteCond %{QUERY_STRING} ^org=(.*)
+    RewriteRule ^beian_shencha_list_org$ /jssipo/index.php?type=beian&content=beianshenchaListOrg&org=%1 [L]
+	RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^beian_fuwu_list$ /jssipo/index.php?type=beian&content=beianfuwuList&page=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^beian_fuwu_list_update$ /jssipo/index.php?type=beian&content=beianfuwuListUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^beian_fuwu_Org$ /jssipo/index.php?type=beian&content=beianfuwuOrg&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^beian_fuwu_list_org$ /jssipo/index.php?type=beian&content=beianfuwuListOrg&page=%1 [L]
+	RewriteCond %{QUERY_STRING} ^org=(.*)
+    RewriteRule ^beian_fuwu_list_org$ /jssipo/index.php?type=beian&content=beianfuwuListOrg&org=%1 [L]
+	RewriteRule ^beian_translate_Org$ /jssipo/index.php?type=beian&content=beiantranslateOrg&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^beian_translate_list_org$ /jssipo/index.php?type=beian&content=beiantranslateListOrg&page=%1 [L]
+	RewriteCond %{QUERY_STRING} ^org=(.*)
+    RewriteRule ^beian_translate_list_org$ /jssipo/index.php?type=beian&content=beiantranslateListOrg&org=%1 [L]
+	RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^beian_zhuanan_list_org$ /jssipo/index.php?type=beian&content=beianzhuananListOrg&page=%1 [L]
+	RewriteCond %{QUERY_STRING} ^org=(.*)
+    RewriteRule ^beian_zhuanan_list_org$ /jssipo/index.php?type=beian&content=beianzhuananListOrg&org=%1 [L]
+	RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^beian_zhuanan_Org$ /jssipo/index.php?type=beian&content=beianzhuananOrg&id=%1 [L]
+	RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^beian_zhuanan_list_update$ /jssipo/index.php?type=beian&content=beianzhuananListUpdate&id=%1 [L]
+	RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^beian_zhuanan_list$ /jssipo/index.php?type=beian&content=beianzhuananList&page=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^beian_zhuanan_list_update$ /jssipo/index.php?type=beian&content=beianzhuananListUpdate&id=%1 [L]
+	RewriteCond %{QUERY_STRING} ^org=(.*)
+    RewriteRule ^beian_qingjia_list_org$ /jssipo/index.php?type=beian&content=beianqingjiaListOrg&org=%1 [L]
+	RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^beian_qingjia_list_org$ /jssipo/index.php?type=beian&content=beianqingjiaListOrg&page=%1 [L]
+	RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^beian_qingjia_list$ /jssipo/index.php?type=beian&content=beianqingjiaList&page=%1 [L]
+	RewriteCond %{QUERY_STRING} ^org=(.*)
+    RewriteRule ^beian_huodong_list_org$ /jssipo/index.php?type=beian&content=beianhuodongListOrg&org=%1 [L]
+	RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^beian_huodong_list_org$ /jssipo/index.php?type=beian&content=beianhuodongListOrg&page=%1 [L]
+	RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^beian_huodong_list$ /jssipo/index.php?type=beian&content=beianhuodongList&page=%1 [L]
+	RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^beian_huodong_list_update$ /jssipo/index.php?type=beian&content=beianhuodongListUpdate&id=%1 [L]
+	
+	RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^s_in$ /jssipo/index.php?type=biaoge&content=sIn&page=%1 [L]
+	RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^s_list$ /jssipo/index.php?type=biaoge&content=sList&page=%1 [L]
+	RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^s_list_search$ /jssipo/index.php?type=biaoge&content=sListSearch&page=%1 [L]
+    RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^s_list_update$ /jssipo/index.php?type=biaoge&content=sListUpdate&id=%1 [L]
+    RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^s_list_org$ /jssipo/index.php?type=biaoge&content=sListOrg&page=%1 [L]
+	RewriteCond %{QUERY_STRING} ^page=(.*)
+    RewriteRule ^s_list_org_search$ /jssipo/index.php?type=biaoge&content=sListOrgSearch&page=%1 [L]
+	RewriteCond %{QUERY_STRING} ^org=(.*)
+    RewriteRule ^s_list_org$ /jssipo/index.php?type=biaoge&content=sListOrg&org=%1 [L]
+	RewriteCond %{QUERY_STRING} ^id=(.*)
+    RewriteRule ^s_list_org_view$ /jssipo/index.php?type=biaoge&content=sListOrgView&id=%1 [L]
+  </ifmodule>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
