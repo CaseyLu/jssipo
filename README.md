@@ -1,2 +1,0 @@
-# jssipo
-php web applicaiton
